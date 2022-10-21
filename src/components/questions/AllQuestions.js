@@ -79,8 +79,6 @@ function AllQuestions({ account, mainContract }) {
               </Link>{" "}
               <p>{inde[1]}</p>
               <div className="DisplayQuestions-askby">
-                <small> </small>
-
                 <p>
                   {" "}
                   Ask by{" "}
@@ -91,9 +89,6 @@ function AllQuestions({ account, mainContract }) {
                   />{" "}
                 </p>
               </div>
-              {/* <div  className='avatar'>
-          <img src='https://i.pravatar.cc/30'alt=''/>
-          </div> */}
               <div className="counter">
                 <button className="plus" onClick={() => add(inde[5])}>
                   +

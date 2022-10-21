@@ -44,10 +44,13 @@
 {
     background-color: black;
 }
-canvas
+/* .canvas
 {
     background-color: black !important;
 
+} */
+.scene-container {
+    z-index: -1;
 }
 .z-Index
 {
@@ -112,6 +115,7 @@ canvas
     text-align: center;
     margin: 0 auto;
     transition: transform .3s;
+    transition: all 1s ease;
 }
 .steps:hover
 {
@@ -135,7 +139,7 @@ canvas
 {
     margin-top: 140px !important;
     padding: 20px;
-    width:60%;
+    width:80%;
     margin:0 auto;
     background-color: #faebd7;
     color:black;
@@ -159,9 +163,8 @@ canvas
 .faq-body-
 {
     background: transparent;
-    width:70%;
+    width:80%;
     margin: 0 auto;
-    margin-bottom: 50px;
 }
 .faq-title
 {
@@ -171,6 +174,7 @@ canvas
 {
     background-color: #faebd7 !important;
     padding: 20px;
+    border-radius: 10px;
 }
 .faq-row
 {

@@ -4,6 +4,7 @@ import ParticlesConfig from "./particalsconfig";
 import Downarrow from "../down-arrow";
 import Logo from "./logo.png";
 import Faq from "react-faq-component";
+import HomeGlobe from "./HomeGlobe";
 const data = {
   title: "FAQ (How it works)",
   rows: [
@@ -91,10 +92,11 @@ const Home = () => {
   return (
     <>
       <div className="background">
-        <ParticlesConfig></ParticlesConfig>
+        <ParticlesConfig className="parti"></ParticlesConfig>
         <div className="text-home z-Index">
           <div className="landing">
-            <img src={Logo} className="logo" />
+            {/* <img src={Logo} className="logo" /> */}
+            <HomeGlobe />
             <div className="tag-line">
               Your one stop space fo all queries on Web3
             </div>

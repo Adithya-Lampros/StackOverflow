@@ -40,7 +40,7 @@ function Sidebar({ mainContract }) {
       <div className="right-section">
         <div className="sidebar-heading">
           <h2>
-            <img src={staticon} alt />
+            <img src={staticon} alt="Stats img" />
             Stats
           </h2>
         </div>
@@ -55,7 +55,7 @@ function Sidebar({ mainContract }) {
             <h2>{answer}</h2>
           </div>
           <div class="grid-item-3">
-            <p>articles</p>
+            <p>Articles</p>
             <h2>{article}</h2>
           </div>
           <div class="grid-item-4">
@@ -63,28 +63,14 @@ function Sidebar({ mainContract }) {
             <h2>{user}</h2>
           </div>
         </div>
+
+        <div className="heading-members">
+          <h2>
+            <img src={membericon} alt="Top img" />
+            Top Members
+          </h2>
+        </div>
         <div className="top-members">
-          <div className="heading-members">
-            <h2>
-              <img src={membericon} alt />
-              Top Members
-            </h2>
-          </div>
-          {/* <div className="members">
-              <img className="profile-img" src="https://i.pravatar.cc/200" alt=""/>
-              <div className="text-container">
-                <p className="title-text">Austin May</p>
-                <h2>USer Name</h2>
-                <p className="info-text">Lorem, ipsum dolor.</p>
-                <p className="desc-text">
-                  Lorem, ipsum.
-                </p>
-              </div>
-              
-            
-              
-            </div>
-           */}
           <div class="cards">
             <div class="card card-1">
               <h3 class="card__title">
@@ -93,9 +79,9 @@ function Sidebar({ mainContract }) {
                   src="https://i.pravatar.cc/70"
                   alt=""
                 />
-                Lorem, ipsum dolor.
-                <p>Lorem ipsum dolor sit.</p>
+                <div className="profile-header-text">Lorem</div>
               </h3>
+              <p>Lorem ipsum dolor sit. This is a dummy Text.</p>
             </div>
           </div>
           <div class="cards">
@@ -106,9 +92,9 @@ function Sidebar({ mainContract }) {
                   src="https://i.pravatar.cc/70"
                   alt=""
                 />
-                Lorem, ipsum dolor.
-                <p>Lorem ipsum dolor sit.</p>
+                <div className="profile-header-text">Ipsum</div>
               </h3>
+              <p>Lorem ipsum dolor sit. This is a dummy Text.</p>
             </div>
           </div>
           <div class="cards">
@@ -119,9 +105,9 @@ function Sidebar({ mainContract }) {
                   src="https://i.pravatar.cc/70"
                   alt=""
                 />
-                Lorem, ipsum dolor.
-                <p>Lorem ipsum dolor sit.</p>
+                <div className="profile-header-text">Dolor</div>
               </h3>
+              <p>Lorem ipsum dolor sit. This is a dummy Text.</p>
             </div>
           </div>
           <div class="cards">
@@ -132,9 +118,9 @@ function Sidebar({ mainContract }) {
                   src="https://i.pravatar.cc/70"
                   alt=""
                 />
-                Lorem, ipsum dolor.
-                <p>Lorem ipsum dolor sit.</p>
+                <div className="profile-header-text">Sit</div>
               </h3>
+              <p>Lorem ipsum dolor sit. This is a dummy Text.</p>
             </div>
           </div>
           <div class="cards">
@@ -145,9 +131,9 @@ function Sidebar({ mainContract }) {
                   src="https://i.pravatar.cc/70"
                   alt=""
                 />
-                Lorem, ipsum dolor.
-                <p>Lorem ipsum dolor sit.</p>
+                <div className="profile-header-text">Daa</div>
               </h3>
+              <p>Lorem ipsum dolor sit. This is a dummy Text.</p>
             </div>
           </div>
         </div>

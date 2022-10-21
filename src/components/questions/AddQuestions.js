@@ -82,7 +82,7 @@ const AddQuestions = ({ mainContract, account }) => {
 
           <div className="Question_fields">
             <div className="title">
-              <div className="title-heading">Title:</div>
+              <div className="title-heading">Title</div>
               <div className="title_instruction">
                 Be spacific and Imagine you are asking question to another
                 person.
@@ -99,7 +99,7 @@ const AddQuestions = ({ mainContract, account }) => {
               </div>
             </div>
             <div className="body">
-              <div className="body_title">Body:</div>
+              <div className="body_title">Body</div>
               <div className="body_instruction">
                 Include all information someone would need to aswer the
                 question.
@@ -198,7 +198,7 @@ const AddQuestions = ({ mainContract, account }) => {
             </div>
             <div className="submit-btn-parent">
               <button onClick={Datastoring} className="submit-btn">
-                Submit the Question
+                Submit
               </button>
             </div>
           </div>

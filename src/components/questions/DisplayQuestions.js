@@ -42,18 +42,16 @@ const DisplayQuestions = ({ account, mainContract }) => {
             <div className="main-filter">
               <div className="main-tabs">
                 <div className="main-tab">
-                  <button>Newest</button>
+                  <button className="main-tab-btn">Newest</button>
                 </div>
                 <div className="main-tab">
-                  <button>Score</button>
+                  <button className="main-tab-btn">Score</button>
                 </div>
                 <div className="main-tab">
-                  <button>Unanswered</button>
+                  <button className="main-tab-btn">Unanswered</button>
                 </div>
               </div>
-              <div className="main-filter-item">
-                <p>Filter</p>
-              </div>
+              <div className="main-filter-item">Filter</div>
             </div>
           </div>
           <div className="questions">
@@ -61,8 +59,8 @@ const DisplayQuestions = ({ account, mainContract }) => {
               <AllQuestions account={account} mainContract={mainContract} />
             </div>
           </div>
-          {/* <div class="pagination">
-            <a href="#">previous</a>
+          <div class="pagination">
+            <a href="#">Previous</a>
             <a href="#" className="active">
               1
             </a>
@@ -72,7 +70,7 @@ const DisplayQuestions = ({ account, mainContract }) => {
             <a href="#">5</a>
             <a href="#">6</a>
             <a href="#">Next</a>
-          </div> */}
+          </div>
         </div>
 
         <Sidebar mainContract={mainContract} />

@@ -107,7 +107,7 @@ const AddArticle = ({ mainContract }) => {
           <div className="question_heading">Add the artical</div>
           <div className="Question_fields">
             <div className="title">
-              <div className="title-heading">Title:</div>
+              <div className="title-heading">Title</div>
               <div className="title_instruction">
                 Be spacific and Imagine you are asking writing article to
                 someone
@@ -156,7 +156,7 @@ const AddArticle = ({ mainContract }) => {
               hidden
             />
             <div className="body">
-              <div className="body_title">Body:</div>
+              <div className="body_title">Body</div>
               <div className="body_instruction">
                 Include all information someone would need to know from this
                 article.
@@ -255,7 +255,7 @@ const AddArticle = ({ mainContract }) => {
             </div>
             <div className="submit-btn-parent">
               <button className="submit-btn" onClick={DataStoring}>
-                Submit the Article
+                Submit
               </button>
             </div>
           </div>
