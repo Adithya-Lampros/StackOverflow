@@ -96,7 +96,9 @@ const Home = () => {
         <div className="text-home z-Index">
           <div className="landing">
             {/* <img src={Logo} className="logo" /> */}
-            <HomeGlobe />
+            <div className="globe-div">
+              <HomeGlobe />
+            </div>
             <div className="tag-line">
               Your one stop space fo all queries on Web3
             </div>

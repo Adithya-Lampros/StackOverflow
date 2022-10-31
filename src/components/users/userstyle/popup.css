@@ -52,7 +52,7 @@ img.uploaded_image-editprofile {
 }
 
 .input-edit-profile {
-  width: 100%;
+  width: 96%;
   border: 2px solid #eee;
   border-radius: 10px;
   height: 2rem;
@@ -69,6 +69,7 @@ img.uploaded_image-editprofile {
 
 textarea.input-edit-profile-about-me {
   resize: none;
+  width: 96%;
 }
 
 .modalContainer .title {

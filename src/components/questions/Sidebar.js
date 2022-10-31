@@ -44,36 +44,35 @@ function Sidebar({ mainContract }) {
             Stats
           </h2>
         </div>
-        <div className="grid-container">
-          <div class="grid-item-1">
-            <p>Question</p>
-            <h2>{question}</h2>
+        <div className="sidebar-grid-container">
+          <div class="sidebar-grid-item">
+            <p className="sidebar-title">Question</p>
+            <h2 className="sidebar-number-1">{question}</h2>
           </div>
-          <div class="grid-item-2">
-            <p>Answers</p>
-
-            <h2>{answer}</h2>
+          <div class="sidebar-grid-item">
+            <p className="sidebar-title">Answers</p>
+            <h2 className="sidebar-number-2">{answer}</h2>
           </div>
-          <div class="grid-item-3">
-            <p>Articles</p>
-            <h2>{article}</h2>
+          <div class="sidebar-grid-item">
+            <p className="sidebar-title">Articles</p>
+            <h2 className="sidebar-number-3">{article}</h2>
           </div>
-          <div class="grid-item-4">
-            <p>Users</p>
-            <h2>{user}</h2>
+          <div class="sidebar-grid-item">
+            <p className="sidebar-title">Users</p>
+            <h2 className="sidebar-number-4">{user}</h2>
           </div>
         </div>
 
-        <div className="heading-members">
-          <h2>
-            <img src={membericon} alt="Top img" />
-            Top Members
-          </h2>
-        </div>
         <div className="top-members">
-          <div class="cards">
-            <div class="card card-1">
-              <h3 class="card__title">
+          <div className="heading-members">
+            <h2>
+              <img src={membericon} alt="Top img" />
+              Top Members
+            </h2>
+          </div>
+          <div class="sidebar-cards">
+            <div class="sidebar-sub-card">
+              <h3 class="sidebar-card-title">
                 <img
                   className="profile-img-1"
                   src="https://i.pravatar.cc/70"
@@ -84,9 +83,9 @@ function Sidebar({ mainContract }) {
               <p>Lorem ipsum dolor sit. This is a dummy Text.</p>
             </div>
           </div>
-          <div class="cards">
-            <div class="card card-1">
-              <h3 class="card__title">
+          <div class="sidebar-cards">
+            <div class="sidebar-sub-card">
+              <h3 class="sidebar-card-title">
                 <img
                   className="profile-img-1"
                   src="https://i.pravatar.cc/70"
@@ -97,9 +96,9 @@ function Sidebar({ mainContract }) {
               <p>Lorem ipsum dolor sit. This is a dummy Text.</p>
             </div>
           </div>
-          <div class="cards">
-            <div class="card card-1">
-              <h3 class="card__title">
+          <div class="sidebar-cards">
+            <div class="sidebar-sub-card">
+              <h3 class="sidebar-card-title">
                 <img
                   className="profile-img-1"
                   src="https://i.pravatar.cc/70"
@@ -110,9 +109,9 @@ function Sidebar({ mainContract }) {
               <p>Lorem ipsum dolor sit. This is a dummy Text.</p>
             </div>
           </div>
-          <div class="cards">
-            <div class="card card-1">
-              <h3 class="card__title">
+          <div class="sidebar-cards">
+            <div class="sidebar-sub-card">
+              <h3 class="sidebar-card-title">
                 <img
                   className="profile-img-1"
                   src="https://i.pravatar.cc/70"
@@ -123,9 +122,9 @@ function Sidebar({ mainContract }) {
               <p>Lorem ipsum dolor sit. This is a dummy Text.</p>
             </div>
           </div>
-          <div class="cards">
-            <div class="card card-1">
-              <h3 class="card__title">
+          <div class="sidebar-cards">
+            <div class="sidebar-sub-card">
+              <h3 class="sidebar-card-title">
                 <img
                   className="profile-img-1"
                   src="https://i.pravatar.cc/70"

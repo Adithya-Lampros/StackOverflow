@@ -7,7 +7,22 @@
   right: 0%;
 }
 
-.card__title {
+.sidebar-cards {
+  display: flex;
+  border-radius: 10px;
+  align-items: center;
+  margin: 0 auto;
+  flex: 0 0 25%;
+  box-shadow: rgba(0, 0, 0, 0.3) 5px 8px 12px;
+  margin-bottom: 10px;
+  padding-left: 1px;
+}
+
+.sidebar-card-title {
+  display: flex;
+}
+
+.sidebar-sub-card {
   display: flex;
 }
 
@@ -23,4 +38,35 @@
 .top-members {
   height: calc(100vh - 296px);
   overflow: scroll;
+}
+.sidebar-grid-container {
+  display: grid;
+  width: 100%;
+}
+.sidebar-grid-item {
+  display: flex;
+  height: 80px;
+  width: 100%;
+  border-radius: 10px;
+  align-items: center;
+  margin: 0 auto;
+  flex: 0 0 25%;
+  box-shadow: rgba(0, 0, 0, 0.3) 5px 8px 12px;
+  margin-bottom: 20px;
+  gap: 20vw;
+}
+.sidebar-title {
+  margin: 10px;
+}
+
+.sidebar-number-2 {
+  margin: 9px;
+}
+
+.sidebar-number-3 {
+  margin: 18px;
+}
+
+.sidebar-number-4 {
+  margin: 32px;
 }

@@ -2,7 +2,22 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom"; // react-router v4/v5
 import Cookies from "universal-cookie";
+import {
+  WagmiConfig,
+  createClient,
+  defaultChains,
+  configureChains,
+} from "wagmi";
+import { alchemyProvider } from "wagmi/providers/alchemy";
+import { publicProvider } from "wagmi/providers/public";
 
+// import { getDefaultProvider } from "ethers";
+// import Profile from "./xmtp/xmtp";
+import { CoinbaseWalletConnector } from "wagmi/connectors/coinbaseWallet";
+// import { InjectedConnector } from "wagmi/connectors/injected";
+import { MetaMaskConnector } from "wagmi/connectors/metaMask";
+
+import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
 /********************* WEB3 DEPENDENCIES ********************/
 import { WalletLinkConnector } from "@web3-react/walletlink-connector";
 // import { WalletConnectConnector } from "@web3-react/walletconnect-connector";
@@ -24,7 +39,7 @@ import AddQuestions from "./components/questions/AddQuestions";
 import DisplayQuestions from "./components/questions/DisplayQuestions";
 import SingleQuestion from "./components/questions/SingleQuestion";
 import AddArticle from "./components/questions/AddArticle";
-import Chat from "./components/chat/Chat";
+import Communication from "./components/chat/Communication";
 import Profile from "./components/users/Profile";
 import FindUsers from "./components/users/FindUsers";
 import SingleUser from "./components/users/SingleUser";
@@ -68,9 +83,9 @@ const App = () => {
         setErr(error);
       });
     setAccount(connected);
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    const signer = provider.getSigner();
-    let networkName = await provider.getNetwork();
+    const providerweb = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = providerweb.getSigner();
+    let networkName = await providerweb.getNetwork();
     let chainId = networkName.chainId;
     window.ethereum.on("chainChanged", (chainId) => {
       window.location.reload();
@@ -102,7 +117,7 @@ const App = () => {
   };
 
   const { ethereum } = window;
-  const provider = new ethers.providers.Web3Provider(window.ethereum);
+  const providerweb = new ethers.providers.Web3Provider(window.ethereum);
 
   const cookie = new Cookies();
 
@@ -163,7 +178,7 @@ const App = () => {
       const accounts = await ethereum.request({
         method: "eth_requestAccounts",
       });
-      let balance = await provider.getBalance(accounts[0]);
+      let balance = await providerweb.getBalance(accounts[0]);
       let bal = ethers.utils.formatEther(balance);
       cookie.set("account", accounts[0], { path: "/", maxAge: 3600 });
       setAccountBalance(bal);
@@ -195,168 +210,203 @@ const App = () => {
 
   useOutsideAlerter(wrapperRef);
 
+  const { chains, provider, webSocketProvider } = configureChains(
+    defaultChains,
+    [alchemyProvider({ apiKey: "yourAlchemyApiKey" }), publicProvider()]
+  );
+
+  const client = createClient({
+    autoConnect: true,
+    connectors: [
+      new MetaMaskConnector({ chains }),
+      new CoinbaseWalletConnector({
+        chains,
+        options: {
+          appName: "wagmi",
+        },
+      }),
+      new WalletConnectConnector({
+        chains,
+        options: {
+          qrcode: true,
+        },
+      }),
+      // new InjectedConnector({
+      //   chains,
+      //   options: {
+      //     name: "Injected",
+      //     shimDisconnect: true,
+      //   },
+      // }),
+    ],
+    provider,
+    webSocketProvider,
+  });
+
   return (
     <>
       <div className="App">
-        <Router>
-          <Navbar setOpenWalletOption={setOpenWalletOption} />
-          <div className="main-content">
-            <Routes>
-              <Route exact path="/" element={<Home />} />
-              <Route
-                exact
-                path="/info"
-                element={
-                  <CryptoInfo
-                    tokenContract={tokenContract}
-                    mainContract={mainContract}
-                    web3Handler={web3Handler}
-                    account={account}
-                  />
-                }
-              />
-              <Route
-                path="/ask-question"
-                element={
-                  <AddQuestions
-                    tokenContract={tokenContract}
-                    mainContract={mainContract}
-                    web3Handler={web3Handler}
-                    account={account}
-                  />
-                }
-              />
-              <Route
-                path="/find-question"
-                element={
-                  <DisplayQuestions
-                    tokenContract={tokenContract}
-                    mainContract={mainContract}
-                    web3Handler={web3Handler}
-                    account={account}
-                  />
-                }
-              />
-              <Route
-                path="/single-question/"
-                element={
-                  <SingleQuestion
-                    id={1}
-                    tokenContract={tokenContract}
-                    mainContract={mainContract}
-                    web3Handler={web3Handler}
-                    account={account}
-                  />
-                }
-              />
-              <Route
-                path="/add-article"
-                element={
-                  <AddArticle
-                    tokenContract={tokenContract}
-                    mainContract={mainContract}
-                    web3Handler={web3Handler}
-                    account={account}
-                  />
-                }
-              />
-              <Route path="/message" element={<Chat id={1} />} />
-              <Route
-                path="/profile"
-                element={
-                  <Profile
-                    mainContract={mainContract}
-                    web3Handler={web3Handler}
-                    account={account}
-                  />
-                }
-              />
-              <Route
-                path="/find-profile"
-                element={
-                  <FindUsers
-                    mainContract={mainContract}
-                    web3Handler={web3Handler}
-                    account={account}
-                  />
-                }
-              />
-              <Route
-                path="/user/"
-                element={
-                  <SingleUser
-                    tokenContract={tokenContract}
-                    mainContract={mainContract}
-                    web3Handler={web3Handler}
-                    account={account}
-                  />
-                }
-              />
-              <Route
-                path="/buytoken"
-                element={
-                  <ByToken
-                    tokenContract={tokenContract}
-                    mainContract={mainContract}
-                    web3Handler={web3Handler}
-                    account={account}
-                  />
-                }
-              />
+        <WagmiConfig client={client}>
+          <Router>
+            <Navbar setOpenWalletOption={setOpenWalletOption} />
+            <div className="main-content">
+              <Routes>
+                <Route exact path="/" element={<Home />} />
+                <Route
+                  exact
+                  path="/info"
+                  element={
+                    <CryptoInfo
+                      tokenContract={tokenContract}
+                      mainContract={mainContract}
+                      web3Handler={web3Handler}
+                      account={account}
+                    />
+                  }
+                />
+                <Route
+                  path="/ask-question"
+                  element={
+                    <AddQuestions
+                      tokenContract={tokenContract}
+                      mainContract={mainContract}
+                      web3Handler={web3Handler}
+                      account={account}
+                    />
+                  }
+                />
+                <Route
+                  path="/find-question"
+                  element={
+                    <DisplayQuestions
+                      tokenContract={tokenContract}
+                      mainContract={mainContract}
+                      web3Handler={web3Handler}
+                      account={account}
+                    />
+                  }
+                />
+                <Route
+                  path="/single-question/"
+                  element={
+                    <SingleQuestion
+                      id={1}
+                      tokenContract={tokenContract}
+                      mainContract={mainContract}
+                      web3Handler={web3Handler}
+                      account={account}
+                    />
+                  }
+                />
+                <Route
+                  path="/add-article"
+                  element={
+                    <AddArticle
+                      tokenContract={tokenContract}
+                      mainContract={mainContract}
+                      web3Handler={web3Handler}
+                      account={account}
+                    />
+                  }
+                />
+                <Route path="/message" element={<Communication id={1} />} />
+                <Route
+                  path="/profile"
+                  element={
+                    <Profile
+                      mainContract={mainContract}
+                      web3Handler={web3Handler}
+                      account={account}
+                    />
+                  }
+                />
+                <Route
+                  path="/find-profile"
+                  element={
+                    <FindUsers
+                      mainContract={mainContract}
+                      web3Handler={web3Handler}
+                      account={account}
+                    />
+                  }
+                />
+                <Route
+                  path="/user/"
+                  element={
+                    <SingleUser
+                      tokenContract={tokenContract}
+                      mainContract={mainContract}
+                      web3Handler={web3Handler}
+                      account={account}
+                    />
+                  }
+                />
+                <Route
+                  path="/buytoken"
+                  element={
+                    <ByToken
+                      tokenContract={tokenContract}
+                      mainContract={mainContract}
+                      web3Handler={web3Handler}
+                      account={account}
+                    />
+                  }
+                />
 
-              <Route
-                path="/displayarticle"
-                element={
-                  <CryptoDisplayArticle
-                    tokenContract={tokenContract}
-                    mainContract={mainContract}
-                    web3Handler={web3Handler}
-                    account={account}
-                  />
-                }
-              />
-              <Route path="/login" element={<Login />} />
-            </Routes>
-          </div>
-        </Router>
-        {openWalletOption ? (
-          <div className="alert-main">
-            <div className="alert-box" ref={wrapperRef}>
-              <div className="alert-header">
-                <div className="title">CONNECT</div>
-              </div>
-              <div className="alert-container">
-                <div className="alert-holder">
-                  <div className="image">
-                    <img
-                      src={metamask}
-                      onClick={() => {
-                        connectWallet();
-                      }}
-                      title="metamask"
-                      className="mm"
-                      alt="metamask"
+                <Route
+                  path="/displayarticle"
+                  element={
+                    <CryptoDisplayArticle
+                      tokenContract={tokenContract}
+                      mainContract={mainContract}
+                      web3Handler={web3Handler}
+                      account={account}
                     />
-                  </div>
-                  <div className="image">
-                    <img
-                      src={coinbase}
-                      onClick={() => {
-                        activate(CoinbaseWallet);
-                      }}
-                      title="coinbase"
-                      className="mm"
-                      alt="coinbase"
-                    />
-                  </div>
-                  {/* <div className='image'>
+                  }
+                />
+                <Route path="/login" element={<Login />} />
+              </Routes>
+            </div>
+          </Router>
+          {openWalletOption ? (
+            <div className="alert-main">
+              <div className="alert-box" ref={wrapperRef}>
+                <div className="alert-header">
+                  <div className="title">CONNECT</div>
+                </div>
+                <div className="alert-container">
+                  <div className="alert-holder">
+                    <div className="image">
+                      <img
+                        src={metamask}
+                        onClick={() => {
+                          connectWallet();
+                        }}
+                        title="metamask"
+                        className="mm"
+                        alt="metamask"
+                      />
+                    </div>
+                    <div className="image">
+                      <img
+                        src={coinbase}
+                        onClick={() => {
+                          activate(CoinbaseWallet);
+                        }}
+                        title="coinbase"
+                        className="mm"
+                        alt="coinbase"
+                      />
+                    </div>
+                    {/* <div className='image'>
                       <img src={walletconnect} onClick={() => { activate(WalletConnect) }} className="mm" alt="wallet connect image" />
                     </div> */}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ) : null}
+          ) : null}
+        </WagmiConfig>
       </div>
     </>
   );

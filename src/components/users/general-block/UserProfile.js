@@ -123,7 +123,7 @@ export default function UserProfile({ mainContract, account }) {
             <div className="card">
               <div className="card-inner-div">
                 <div className="card-inner-content">
-                  <p>{about}</p>
+                  <p>{about}Hello</p>
                 </div>
               </div>
             </div>

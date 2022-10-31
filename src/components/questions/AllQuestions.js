@@ -61,33 +61,11 @@ function AllQuestions({ account, mainContract }) {
             <div className="DisplayQuestions-left">
               <div className="DisplayQuestions-votes">
                 <p>{inde[2]}</p>
-                <p> votes</p>
+                <p> Votes</p>
               </div>
               <div className="DisplayQuestions-answer">
                 <p> {inde[3]}</p>
-                <p> answer</p>
-              </div>
-            </div>
-            <div className="DisplayQuestions-right">
-              {console.log(inde[5])}
-              <Link
-                className="all-user-link"
-                to={"/single-question/"}
-                state={{ que_id: inde[5] }}
-              >
-                <h3>{inde[0]}</h3>
-              </Link>{" "}
-              <p>{inde[1]}</p>
-              <div className="DisplayQuestions-askby">
-                <p>
-                  {" "}
-                  Ask by{" "}
-                  <img
-                    src={inde[4]}
-                    alt=""
-                    className="all-question-profile-img"
-                  />{" "}
-                </p>
+                <p> Answer</p>
               </div>
               <div className="counter">
                 <button className="plus" onClick={() => add(inde[5])}>
@@ -99,6 +77,29 @@ function AllQuestions({ account, mainContract }) {
                 <button className="minus" onClick={() => minus(inde[5])}>
                   -
                 </button>
+              </div>
+            </div>
+            <div className="DisplayQuestions-right">
+              <div>
+                <div className="DisplayQuestions-askby">
+                  <p>
+                    <img
+                      src={inde[4]}
+                      alt=""
+                      className="all-question-profile-img"
+                    />
+                    Ask by
+                  </p>
+                </div>
+                {console.log(inde[5])}
+                <Link
+                  className="all-user-link"
+                  to={"/single-question/"}
+                  state={{ que_id: inde[5] }}
+                >
+                  <h3>{inde[0]}</h3>
+                </Link>
+                {inde[1]}
               </div>
             </div>
           </div>
