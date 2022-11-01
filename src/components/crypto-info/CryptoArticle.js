@@ -6,6 +6,7 @@ import Axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
+import LoadingAnimation from "../users/general-block/LoadingAnimation";
 
 const CryptoArticle = ({ account, mainContract }) => {
   const [isLoading, setLoading] = React.useState(true);
@@ -41,7 +42,7 @@ const CryptoArticle = ({ account, mainContract }) => {
   }, [mainContract]);
 
   if (isLoading) {
-    return "loading";
+    return <LoadingAnimation />;
   }
 
   if (src.length > 0) {

@@ -126,10 +126,10 @@
 {
     width: 100px;
 }
-.about-us
+/* .about-us
 {
     height: 100vh;
-}
+} */
 .about-us-title
 {
     padding-bottom: 20px;
@@ -139,7 +139,7 @@
 {
     margin-top: 140px !important;
     padding: 20px;
-    width:80%;
+    width:79%;
     margin:0 auto;
     background-color: #faebd7;
     color:black;
@@ -148,12 +148,16 @@
 .about-project-body
 {
     width:100%;
-    padding: 10px;
     text-align: justify;
     font-size: 1.3rem;   
     line-height: 30px; 
     margin:0 auto;
 }
+
+.FAQs{
+    padding-bottom: 50px;
+}
+
 .FAQs-title
 {
     padding-top: 140px;
@@ -163,7 +167,7 @@
 .faq-body-
 {
     background: transparent;
-    width:80%;
+    width: 82%;
     margin: 0 auto;
 }
 .faq-title
@@ -184,3 +188,4 @@
 {
     text-align: left;
 }
+

@@ -50,7 +50,7 @@ function AllQuestions({ account, mainContract }) {
   }, [mainContract]);
 
   if (isLoading) {
-    return "loading";
+    return "Loading...";
   }
 
   return (

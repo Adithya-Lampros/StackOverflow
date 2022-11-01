@@ -1,19 +1,31 @@
 .crypto-news {
   min-width: 35%;
   height: fit-content;
-  overflow: scroll;
-  position: sticky;
+  // overflow: scroll;
+  // position: sticky;
   top: 9rem;
+  margin-left: 20px;
 }
 
 .rightcolumn {
-  margin-top: 50px;
+  margin-top: 30px;
   height: 75vh;
-
   justify-content: center;
-  background-color: white;
+  overflow: hidden;
 
   // margin-right:40px;
+}
+
+.news-img-main {
+  width: 100%;
+}
+
+.news-img {
+  height: 100%;
+  max-height: 30vh;
+  width: 100%;
+  max-width: 30vw;
+  border-radius: 10px;
 }
 
 // .news {
@@ -36,15 +48,13 @@
 // }
 
 .apidata {
-  border: 1px solid gray;
-  border-left: none;
-  border-right: none;
-  border-top: none;
   background-color: white;
-  padding-right: 5px;
-  padding-left: 10px;
-  padding-top: none;
+  padding: 10px;
   color: blue;
+  margin: 10px;
+  box-shadow: rgba(0, 0, 0, 0.3) 5px 8px 12px;
+  margin: 10px;
+  border-radius: 10px;
 }
 p:hover {
   color: black;

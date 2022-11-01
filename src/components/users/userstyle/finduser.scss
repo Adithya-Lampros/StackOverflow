@@ -110,6 +110,7 @@ svg.search-svg {
   align-items: center;
   justify-content: flex-start;
   background-color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.3) 5px 8px 12px;
 }
 
 svg.all-user-svg {
@@ -119,7 +120,6 @@ svg.all-user-svg {
 }
 
 .all-user-profile-image {
-
   // width: 30%;
   img {
     border-radius: 100px;

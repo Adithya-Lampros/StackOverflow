@@ -34,8 +34,11 @@ const Cryptonews = () => {
             <h2>Popular News</h2>
             {first7Apidata.map((data, _index) => (
               <div className="apidata" key={_index}>
+                <div className="news-img-main">
+                  <img className="news-img" src={data.imgURL} />
+                </div>
                 <a href={data.link}>
-                  <p>{data.link}</p>
+                  <p>{data.title}</p>
                 </a>
               </div>
             ))}
