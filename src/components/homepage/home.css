@@ -114,7 +114,7 @@
     color:rgb(13, 11, 49);
     text-align: center;
     margin: 0 auto;
-    transition: transform .3s;
+    /* transition: transform .3s; */
     transition: all 1s ease;
 }
 .steps:hover

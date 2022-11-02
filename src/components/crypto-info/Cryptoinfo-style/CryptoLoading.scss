@@ -1,22 +1,24 @@
-.section-loading {
+.crypto-section-loading {
   height: 100%;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: transparent;
+  background-color: #ffffff;
   margin: 1rem 0;
   min-height: 400px;
+  box-shadow: rgba(0, 0, 0, 0.3) 5px 8px 12px;
+  border-radius: 10px;
   position: fixed;
 }
 
-.section-loading ul.list-bars {
+.crypto-section-loading ul.list-bars {
   list-style: none;
   display: flex;
   align-items: center;
 }
 
-.section-loading ul.list-bars li {
+.crypto-section-loading ul.list-bars li {
   margin: 0 7px;
   width: 5px;
   border-radius: 10px;
@@ -24,12 +26,12 @@
   animation: animate 0.8s infinite alternate;
 }
 
-.section-loading ul.list-bars li:nth-child(odd) {
+.crypto-section-loading ul.list-bars li:nth-child(odd) {
   height: 20px;
   animation-delay: 0.6s;
 }
 
-.section-loading ul.list-bars li:nth-child(even) {
+.crypto-section-loading ul.list-bars li:nth-child(even) {
   height: 10px;
 }
 

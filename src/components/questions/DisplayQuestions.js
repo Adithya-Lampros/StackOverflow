@@ -33,25 +33,27 @@ const DisplayQuestions = ({ account, mainContract }) => {
     <>
       <div className="main">
         <div className="content-section">
-          <div className="main-top">
-            <h2> All Questions</h2>
-            <button>Ask Question</button>
-          </div>
-          <div className="main-dec">
-            <p> {num} Questions </p>
-            <div className="main-filter">
-              <div className="main-tabs">
-                <div className="main-tab">
-                  <button className="main-tab-btn">Newest</button>
+          <div className="main-div">
+            <div className="main-top">
+              <h2> All Questions</h2>
+              <button>Ask Question</button>
+            </div>
+            <div className="main-dec">
+              <p> {num} Questions </p>
+              <div className="main-filter">
+                <div className="main-tabs">
+                  <div className="main-tab">
+                    <button className="main-tab-btn">Newest</button>
+                  </div>
+                  <div className="main-tab">
+                    <button className="main-tab-btn">Score</button>
+                  </div>
+                  <div className="main-tab">
+                    <button className="main-tab-btn">Unanswered</button>
+                  </div>
                 </div>
-                <div className="main-tab">
-                  <button className="main-tab-btn">Score</button>
-                </div>
-                <div className="main-tab">
-                  <button className="main-tab-btn">Unanswered</button>
-                </div>
+                <div className="main-filter-item">Filter</div>
               </div>
-              <div className="main-filter-item">Filter</div>
             </div>
           </div>
           <div className="questions">

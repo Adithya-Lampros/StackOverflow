@@ -38,13 +38,13 @@ function Sidebar({ mainContract }) {
   return (
     <>
       <div className="right-section">
-        <div className="sidebar-heading">
-          <h2>
-            <img src={staticon} alt="Stats img" />
-            Stats
-          </h2>
-        </div>
         <div className="sidebar-grid-container">
+          <div className="sidebar-heading">
+            <h2 className="stats-img">
+              <img src={staticon} alt="Stats img" />
+              Stats
+            </h2>
+          </div>
           <div class="sidebar-grid-item">
             <p className="sidebar-title">Question</p>
             <h2 className="sidebar-number-1">{question}</h2>
