@@ -42,6 +42,8 @@
     cursor: pointer;
     margin-top: 5%;
     margin-bottom: 5%;
+    border-radius: 5px;
+    text-align: center;
   }
   // .nav-bar-li:first-of-type {
   //   margin-top: 0;
@@ -53,6 +55,7 @@
   .nav-bar-li:hover {
     background-color: #f6ae2d;
     color: #ffffff;
+    border-radius: 5px;
     // border-radius: 1000px;
   }
 
@@ -113,4 +116,28 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+@media only screen and (max-width: 767px) {
+  .activity-block {
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-bar-ul {
+    margin-left: -30px;
+  }
+  .activity-block .right-block {
+    width: 95%;
+  }
+  .summary-right-block {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 0.5rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .nav-bar-ul {
+    margin-left: -30px;
+  }
 }

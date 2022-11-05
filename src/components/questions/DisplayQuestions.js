@@ -2,7 +2,7 @@ import React from "react";
 import "./DisplayQuestions.scss";
 
 import AllQuestions from "./AllQuestions";
-
+import CryptoLoading from "../users/general-block/LoadingAnimation";
 import membericon from "./group.png";
 import staticon from "./stats.png";
 import { useEffect } from "react";
@@ -27,7 +27,7 @@ const DisplayQuestions = ({ account, mainContract }) => {
   }, [mainContract]);
 
   if (isLoading) {
-    return "loading";
+    return <CryptoLoading />;
   }
   return (
     <>
@@ -51,8 +51,8 @@ const DisplayQuestions = ({ account, mainContract }) => {
                   <div className="main-tab">
                     <button className="main-tab-btn">Unanswered</button>
                   </div>
+                  <div className="main-filter-item">Filter</div>
                 </div>
-                <div className="main-filter-item">Filter</div>
               </div>
             </div>
           </div>
@@ -61,7 +61,7 @@ const DisplayQuestions = ({ account, mainContract }) => {
               <AllQuestions account={account} mainContract={mainContract} />
             </div>
           </div>
-          <div class="pagination">
+          {/* <div class="pagination">
             <a href="#">Previous</a>
             <a href="#" className="active">
               1
@@ -72,7 +72,7 @@ const DisplayQuestions = ({ account, mainContract }) => {
             <a href="#">5</a>
             <a href="#">6</a>
             <a href="#">Next</a>
-          </div>
+          </div> */}
         </div>
 
         <Sidebar mainContract={mainContract} />

@@ -72,64 +72,64 @@ const Profile = ({ mainContract, account }) => {
       <section className="background-image">
         <div className="background-opacity"></div>
         <div className="inside-cover-image">
-          <div className="show-at-bottom">
-            <div className="first-block">
-              <div className="image-outside">
-                <img
-                  className="user-profile-image"
-                  src={imageUrl}
-                  alt="user avatar"
-                  height="84px"
-                  width="84px"
-                />
-              </div>
-              <div className="user-info">
-                <h1 className="user-name">{name}</h1>
-                <h3>{designation}</h3>
+          {/* <div className="show-at-bottom"> */}
+          <div className="first-block">
+            <div className="image-outside">
+              <img
+                className="user-profile-image"
+                src={useravtar}
+                alt="user avatar"
+                height="50px"
+                width="50px"
+              />
+            </div>
+            <div className="user-info">
+              <h1 className="user-name">{name}</h1>
+              <h3>{designation}</h3>
+              <span>
+                {" "}
                 <span>
-                  {" "}
-                  <span>
-                    <svg
-                      className="svg-for-mail"
-                      version="1.1"
-                      id="Capa_1"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16px"
-                      height="16px"
-                      viewBox="0 0 37.195 37.195"
-                      fill="#ffffff"
-                    >
-                      <g>
-                        <g id="_x31_35_86_">
-                          <g>
-                            <path
-                              d="M19.332,22.844c-0.5,0.416-1.114,0.441-1.612,0C11.84,17.616,5.957,12.391,0.074,7.162C0.044,7.208,0.028,7.271,0,7.319
+                  <svg
+                    className="svg-for-mail"
+                    version="1.1"
+                    id="Capa_1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16px"
+                    height="16px"
+                    viewBox="0 0 37.195 37.195"
+                    fill="#ffffff"
+                  >
+                    <g>
+                      <g id="_x31_35_86_">
+                        <g>
+                          <path
+                            d="M19.332,22.844c-0.5,0.416-1.114,0.441-1.612,0C11.84,17.616,5.957,12.391,0.074,7.162C0.044,7.208,0.028,7.271,0,7.319
 				                        v23.677h37.195V7.998C31.239,12.946,25.286,17.896,19.332,22.844z"
-                            />
-                            <path
-                              d="M16.729,18.922c0.607,0.541,1.217,1.082,1.823,1.623C24.264,15.8,29.971,11.056,35.68,6.311
+                          />
+                          <path
+                            d="M16.729,18.922c0.607,0.541,1.217,1.082,1.823,1.623C24.264,15.8,29.971,11.056,35.68,6.311
 				                        c-0.076-0.04-0.158-0.072-0.233-0.111H2.412c2.83,2.517,5.662,5.032,8.492,7.548C12.847,15.472,14.789,17.197,16.729,18.922z"
-                            />
-                          </g>
+                          />
                         </g>
                       </g>
-                    </svg>
-                  </span>
-                  {email}
+                    </g>
+                  </svg>
                 </span>
-              </div>
-              <div className="btns">
-                <button
-                  onClick={() => {
-                    setButtonPopup(true);
-                  }}
-                >
-                  Edit Profile
-                </button>
-                <button onClick={() => {}}>Claim Rewards</button>
-              </div>
+                {email}
+              </span>
+            </div>
+            <div className="btns">
+              <button
+                onClick={() => {
+                  setButtonPopup(true);
+                }}
+              >
+                Edit Profile
+              </button>
+              <button onClick={() => {}}>Claim Rewards</button>
             </div>
           </div>
+          {/* </div> */}
         </div>
       </section>
       <section className="main-container">

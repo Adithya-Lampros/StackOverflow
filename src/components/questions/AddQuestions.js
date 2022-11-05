@@ -84,7 +84,7 @@ const AddQuestions = ({ mainContract, account }) => {
             <div className="title">
               <div className="title-heading">Title</div>
               <div className="title_instruction">
-                Be spacific and Imagine you are asking question to another
+                Be specific and Imagine you are asking question to another
                 person.
               </div>
               <div className="title_textfield">

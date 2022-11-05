@@ -3,7 +3,6 @@ import { useState } from "react";
 import "./AllQuestions.scss";
 import { useEffect } from "react";
 import Axios from "axios";
-import CryptoLoading from "../users/general-block/LoadingAnimation";
 import { Link } from "react-router-dom";
 
 function AllQuestions({ account, mainContract }) {
@@ -51,7 +50,7 @@ function AllQuestions({ account, mainContract }) {
   }, [mainContract]);
 
   if (isLoading) {
-    return <CryptoLoading />;
+    return "Loading...";
   }
 
   return (

@@ -23,7 +23,7 @@ contract customToken is ERC20 {
         initialSupply = _initialSupply;
         // maincontract = _mainContract;
     }
-    Stack s = Stack(0x6cc1A5F4C7187e5C6D52Fb6c51fcE68f52E7d8F8);
+    Stack s = Stack(0x608b0233fdd79447c4f6ebac342b33b3d3dd4c02);
 
     function decimals() public pure override returns (uint8) {
         return 0;

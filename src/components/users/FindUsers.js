@@ -97,7 +97,8 @@ const FindUsers = ({ account, mainContract }) => {
                     <div className="all-user-card">
                       <div className="all-user-profile-image">
                         {console.log(inde[5])}
-                        <img src={inde[5]} alt="avatar" />
+                        {/* src={inde[5]} */}
+                        <img src={useravtar} alt="avatar" />
                       </div>
                       {console.log(inde[4])}
                       <div className="all-user-profile-right">

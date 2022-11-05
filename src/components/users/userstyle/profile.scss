@@ -74,9 +74,9 @@
     border-radius: 100%;
     // padding: 1px;
     // display: inline-flex;
-    width: 84px;
-    height: 84px;
-    padding: 2px;
+    width: 50px;
+    height: 50px;
+    // padding: 2px;
   }
 
   .user-info {
@@ -193,26 +193,22 @@ svg.svg-for-mail {
   margin: 0px 5px 0px 0px;
 }
 
-@media only screen and (min-width: 1200px) {
-  .inside-cover-image {
-    width: 1170px;
+@media only screen and (max-width: 767px) {
+  .first-block {
+    flex-direction: column;
   }
-
-  .main-container {
-    width: 1170px;
+  .first-block .user-info {
+    width: 15px;
+    margin: 10px;
+  }
+  .first-block .btns {
+    margin: 10px;
+    display: flex;
   }
 }
 
-@media only screen and (max-width: 768px) {
-  .inside-cover-image {
-    width: 100%;
-  }
-
-  .main-container {
-    // max-width: 100%;
-    width: 100%;
-    margin: 5px auto;
-    align-items: center;
-    padding: 5px;
+@media (min-width: 768px) and (max-width: 1023px) {
+  .first-block .btns {
+    display: flex;
   }
 }

@@ -92,7 +92,9 @@ const Home = () => {
   return (
     <>
       <div className="background">
-        <ParticlesConfig className="parti"></ParticlesConfig>
+        <div className="part">
+          <ParticlesConfig className="parti"></ParticlesConfig>
+        </div>
         <div className="text-home z-Index">
           <div className="landing">
             {/* <img src={Logo} className="logo" /> */}

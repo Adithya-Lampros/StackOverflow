@@ -162,3 +162,9 @@ button.reset-btn:hover {
   width: 84px;
   height: 84px;
 }
+
+@media only screen and (max-width: 688px) {
+  .modalContainer{
+    width: auto;
+  }
+}

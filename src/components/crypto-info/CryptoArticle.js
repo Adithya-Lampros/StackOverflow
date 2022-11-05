@@ -7,6 +7,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 import CryptoLoading from "./CryptoLoading";
+import DummyIMG from "./tile.png";
 
 const CryptoArticle = ({ account, mainContract }) => {
   const [isLoading, setLoading] = React.useState(true);
@@ -56,7 +57,8 @@ const CryptoArticle = ({ account, mainContract }) => {
                 {src.map((inde) => {
                   return (
                     <div className="fakeimg">
-                      <img className="crypto-img" src={inde[0]} />
+                      {/* src={inde[0]} */}
+                      <img className="crypto-img" src={DummyIMG} />
                       <p>{inde[1]}</p>
                       <Link
                         className="all-user-link"

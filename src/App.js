@@ -39,7 +39,7 @@ import AddQuestions from "./components/questions/AddQuestions";
 import DisplayQuestions from "./components/questions/DisplayQuestions";
 import SingleQuestion from "./components/questions/SingleQuestion";
 import AddArticle from "./components/questions/AddArticle";
-import Communication from "./components/chat/Communication";
+// import Communication from "./components/chat/Communication";
 import Profile from "./components/users/Profile";
 import FindUsers from "./components/users/FindUsers";
 import SingleUser from "./components/users/SingleUser";
@@ -309,7 +309,7 @@ const App = () => {
                     />
                   }
                 />
-                <Route path="/message" element={<Communication id={1} />} />
+                {/* <Route path="/message" element={<Communication id={1} />} /> */}
                 <Route
                   path="/profile"
                   element={

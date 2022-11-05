@@ -4,7 +4,6 @@
 
 .all-users-header {
   border-bottom: 2px solid #d9d9d9;
-  padding-bottom: 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -14,8 +13,7 @@
   .all-user-filter-btns {
     display: inline-flex;
     justify-content: flex-end;
-    // border: 1px solid #838c95;
-    // border-radius: 5px;
+    gap: 10px;
 
     button {
       // color: #ffffff;
@@ -153,31 +151,15 @@ svg.all-user-svg {
   }
 }
 
-// @media only screen and (min-width: 1200px) {
-//   .all-user-cards {
-//     grid-template-columns: repeat(4, 1fr);
-//   }
-// }
-// // @media (min-width: 900px) {
-// //   .all-user-cards {
-// //     grid-template-columns: repeat(4, 1fr);
-// //   }
-// // }
-// @media only screen and (min-width: 992px) {
-//   .all-user-cards {
-//     grid-template-columns: repeat(3, 1fr);
-//   }
-// }
-// @media only screen and (max-width: 768px){
-//   .all-user-cards {
-//     grid-template-columns: repeat(1, 1fr);
-//   }
-// }
-/*Resize the wrap to see the search bar change!*/
-// .wrap {
-//   width: 30%;
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-// }
+@media only screen and (max-width: 767px) {
+  .all-users-header {
+    display: flex;
+    flex-direction: column;
+  }
+  .search {
+    margin: 10px;
+  }
+  .all-users-header .all-user-filter-btns {
+    margin-bottom: 10px;
+  }
+}

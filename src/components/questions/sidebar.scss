@@ -102,3 +102,18 @@
 .sidebar-number-4 {
   margin: 32px;
 }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .right-section {
+    width: 40%;
+    margin-right: 10px;
+    padding-right: 10px;
+    overflow-x: hidden;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .right-section {
+    display: none;
+  }
+}

@@ -90,10 +90,10 @@ const particalsconfig = () => {
               enable: true,
               mode: "bubble",
             },
-            onclick: {
-              enable: true,
-              mode: "repulse",
-            },
+            // onclick: {
+            //   enable: true,
+            //   mode: "repulse",
+            // },
             resize: true,
           },
           modes: {
